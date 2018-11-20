@@ -4,13 +4,16 @@
 [![GitHub Release Badge]][GitHub Releases]
 
 A [Docker] image and [Kubernetes] manifests for providing Kubernetes cluster
-API high availability with use of [Keepalived].
+API high availability with use of [Keepalived]. The solution assigns a
+Kubernetes master node a specified IP address, and if the node is down the
+address automatically moves to another master node.
 
 ## Usage
 
 A Keepalived process should run on all the master nodes of a Kubernetes cluster
 thefore [DaemonSet] is used. Keepalived assigns a specified IP address to a
-specified network interface. Configuration also requires to specify a password.
+specified network interface. It also requires a password for internal usage, you
+less likely to type it anywhere, so could be random.
 
 The provided [Manifest] defines placeholders for this. They should be replaced
 with actual values prior to deployment:
@@ -43,7 +46,7 @@ vrrp_instance VI_1 {
     advert_int 1
     authentication {
         auth_type PASS
-        auth_pass DJCcWWJARj4=
+        auth_pass DJCcWWJARj4= # can be generated with "openssl rand -base64 8"
     }
     virtual_ipaddress {
         10.9.8.10 # replace with needed IP address
@@ -93,5 +96,5 @@ limitations under the License.
 
 [Apache 2.0]: https://opensource.org/licenses/Apache-2.0
 [Apache 2.0 Badge]: https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg?style=flat-square
-[GitHub Releases]: https://github.com/openvnf/keepalived/releases
-[GitHub Release Badge]: https://img.shields.io/github/release/openvnf/keepalived/all.svg?style=flat-square
+[GitHub Releases]: https://github.com/openvnf/kubealived/releases
+[GitHub Release Badge]: https://img.shields.io/github/release/openvnf/kubealived/all.svg?style=flat-square
