@@ -2,6 +2,7 @@
 
 [![License: Apache-2.0][Apache 2.0 Badge]][Apache 2.0]
 [![GitHub Release Badge]][GitHub Releases]
+[![Keepalived Badge]][Keepalived Release]
 
 A [Docker] image and [Kubernetes] manifests for providing Kubernetes cluster
 API high availability with use of [Keepalived]. The solution assigns a
@@ -98,3 +99,5 @@ limitations under the License.
 [Apache 2.0 Badge]: https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg?style=flat-square
 [GitHub Releases]: https://github.com/openvnf/kubealived/releases
 [GitHub Release Badge]: https://img.shields.io/github/release/openvnf/kubealived/all.svg?style=flat-square
+[Keepalived Badge]: https://img.shields.io/badge/Keepalived-v2.0.10-eba935.svg?style=flat-square
+[Keepalived Release]: https://github.com/acassen/keepalived/releases/tag/v2.0.10
