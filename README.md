@@ -63,6 +63,10 @@ $ docker run --name=kubealived --rm -d --cap-add=NET_ADMIN --net=host \
              quay.io/openvnf/kubealived -nl
 ```
 
+Your host now should have the specified IP address assigned to the specified
+interface. If you run the same on another host in the same network and stop
+this one, the IP will move there.
+
 Stop container:
 
 ```
