@@ -22,11 +22,11 @@ with actual values prior to deployment:
 ```
 $ IP="<IP>"
 $ IFACE="<IFACE>"
-$ PASSWORD="$(openssl rand -base64 8)"
-$ curl https://raw.githubusercontent.com/openvnf/kubealived/master/bundle.yaml | \
-       sed -e "s/_IP_/$IP/" \
-           -e "s/_IFACE_/$IFACE/" \
-           -e "s/_PASSWORD_/$PASSWORD/" | kubectl create -f-
+$ PASSWORD="$(openssl rand -base64 8 | tr -d '/')"
+$ curl https://raw.githubusercontent.com/openvnf/kubealived/master/kubealived.yaml | \
+       sed -e "s/_IP_/${IP}/" \
+           -e "s/_IFACE_/${IFACE}/" \
+           -e "s/_PASSWORD_/${PASSWORD}/" | kubectl create -f-
 ```
 
 After deployment one of the master nodes should get the specified IP address on
