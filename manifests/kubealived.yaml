@@ -13,7 +13,7 @@ data:
     vrrp_instance VI_1 {
         state MASTER
         interface _IFACE_
-        virtual_router_id 1
+        virtual_router_id _VRID_
         priority 100
         advert_int 1
         authentication {
@@ -50,7 +50,7 @@ spec:
       hostNetwork: true
       containers:
       - name: kubealived
-        image: quay.io/openvnf/kubealived:1.1.0
+        image: quay.io/openvnf/kubealived:1.1.1
         args: ["-nl"]
         securityContext:
           capabilities:

@@ -1,5 +1,5 @@
 PROJECT = kubealived
-VERSION = $(shell grep image: kubealived.yaml | cut -d: -f3)
+VERSION = $(shell grep image: manifests/kubealived.yaml | cut -d: -f3)
 
 REGISTRY = quay.io
 USER = openvnf
