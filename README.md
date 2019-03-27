@@ -20,8 +20,8 @@ To avoid conflicts between several Kubealived installations within the same
 network the VRID (Virtual Router ID) should be different for each installation
 within a particular network. It should be in the range from 1 to 255.
 
-The provided [Manifest] defines placeholders for these values. They should be
-replaced with actual values prior to deployment:
+The provided [Kubealived Manifest] defines placeholders for these values. They
+should be replaced with actual values prior to deployment:
 
 ```
 $ IFACE="<Network Interface>"
@@ -35,8 +35,8 @@ $ curl https://raw.githubusercontent.com/openvnf/kubealived/master/manifests/kub
 ```
 
 After deployment one of the master nodes should get the specified IP address on
-the specified network interface. If this master node or the running on it pod
-are gone, the IP address moves to another master node.
+the specified network interface. If this master node or a running pod on it
+is down, the IP address moves to another master node.
 
 ## Try With Docker
 
@@ -97,10 +97,10 @@ limitations under the License.
 <!-- Links -->
 
 [Docker]: https://docs.docker.com
-[Manifest]: manifests/kubealived.yaml
 [DaemonSet]: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset
 [Keepalived]: http://keepalived.org
 [Kubernetes]: https://kubernetes.io
+[Kubealived Manifest]: manifests/kubealived.yaml
 
 <!-- Badges -->
 
