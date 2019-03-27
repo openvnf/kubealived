@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.9.2
 
 ARG PROJECT=
 ARG VERSION=
@@ -6,7 +6,7 @@ ARG GIT_SHA=
 
 LABEL PROJECT="${PROJECT}"
 
-ARG KEEPALIVED_VERSION=2.0.10
+ARG KEEPALIVED_VERSION=2.0.13
 
 ARG KEEPALIVED_URL=\
 http://www.keepalived.org/software/keepalived-${KEEPALIVED_VERSION}.tar.gz
