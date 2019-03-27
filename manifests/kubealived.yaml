@@ -36,6 +36,8 @@ spec:
   selector:
     matchLabels:
       app: kubealived
+  updateStrategy:
+    type: RollingUpdate
   template:
     metadata:
       labels:
