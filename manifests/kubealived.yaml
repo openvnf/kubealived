@@ -42,7 +42,7 @@ spec:
         app: kubealived
     spec:
       nodeSelector:
-        node-role.kubernetes.io/master: "true"
+        node-role.kubernetes.io/master: ""
       tolerations:
       - key: "node-role.kubernetes.io/master"
         operator: "Exists"
